@@ -35,11 +35,9 @@ public class SingleConnection {
 			
 			if (connection == null) {//UTILIZE O BRAKPOINT PARA DEBUG NESSA LINHA PARA ACOMPANHAR AS MENSAGENS DE CONEXÃO NO CONSOLE!
 				Class.forName("org.postgresql.Driver"); //Driver do banco PostgreSQL
-				System.out.println("Driver do banco PostgreSQL");
 				connection = DriverManager.getConnection(banco, user, password); //Passando os parâmetros de conexão ao banco
-				System.out.println("Passando os parâmetros de conexão ao banco");
 				connection.setAutoCommit(false); //Configurando o auto commit para desligado, assim podemos controlar quando os commits serão realizados
-				System.out.println("Conectado ao banco de dados curso-jsp com sucesso!");
+				
 			}
 			
 		} catch (Exception e) {

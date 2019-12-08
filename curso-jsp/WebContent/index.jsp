@@ -11,16 +11,27 @@
 <title>Insert title here</title>
 </head>
 <body>
-aaaaaaaaaaassaafs
+
 
 <form action="LoginServlet" method="post">
-	Login
-	<input type="text" id="login" name="login">
-	<br>
-	Senha:
-	<input type="text" id="senha" name="senha">
-	<br>
-	<input type="submit" value="logar">
+	<table>
+	<tr>
+	<td>Login:</td>
+	<td><input type="text" id="login" name="login"></td>
+	</tr>
+	
+	<tr>
+	<td>Senha:</td>
+	<td><input type="password" id="senha" name="senha"></td>
+	</tr>
+	
+	
+	<tr>
+	<td><input type="submit" value="logar"></td>
+	</tr>
+	
+	</table>
+	
 </form>
 
 </body>

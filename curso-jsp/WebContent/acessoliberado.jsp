@@ -8,5 +8,7 @@
 </head>
 <body>
 acesso liberado
+<br>
+<a href="cadastrarUsuario.jsp">Cadastrar Usuário</a>
 </body>
 </html>
