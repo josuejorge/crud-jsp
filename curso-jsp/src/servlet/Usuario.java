@@ -42,12 +42,22 @@ public class Usuario extends HttpServlet {
 			request.setAttribute("usuarios", daoUsuario.listar());
 			view.forward(request, response);
 		} 
+	else if(acao.equalsIgnoreCase("editar")) {
+		BeanCursoJsp beanCursoJsp = daoUsuario.consultar(user);
+		RequestDispatcher view = request.getRequestDispatcher("/cadastrarUsuario.jsp");
+		request.setAttribute("user", daoUsuario.consultar(user));
+		view.forward(request, response);
+		
+		
+	}
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String id = request.getParameter("id");
 		String login = request.getParameter("login");
 		String senha = request.getParameter("senha");
 		

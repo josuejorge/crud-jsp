@@ -78,4 +78,24 @@ public class DAOUsuario {
 			}
 		}
 	}
+
+	public BeanCursoJsp consultar(String login) throws Exception {
+		
+		//String sql = "SELECT * FROM usuarios WHERE login='"+ login +"'";
+		String sql = "select * from usuarios where login= '" + login + "'";
+		
+		PreparedStatement preparedStatement = connection.prepareStatement(sql); // Fazendo o Prepared Statement para
+		// preparar a conexão.
+		ResultSet resultSet = preparedStatement.executeQuery();
+
+	if(resultSet.next()) {
+		BeanCursoJsp beanCursoJsp = new BeanCursoJsp();
+		beanCursoJsp.setLogin(resultSet.getString("login"));
+		beanCursoJsp.setSenha(resultSet.getString("senha"));
+	
+		return	beanCursoJsp;
+	}
+	return null;
+
+	}
 }

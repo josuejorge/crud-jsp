@@ -13,14 +13,19 @@ Cadastrar Usuario
 
 <form action="salvarUsuario" method="post">
 <table>
+<tr>
+	<td>Código:</td>
+	<td><input type="text" id="id" name="id" value="${user.id}"></td>
+	</tr>
+	
 	<tr>
 	<td>Login:</td>
-	<td><input type="text" id="login" name="login"></td>
+	<td><input type="text" id="login" name="login" value="${user.login}"></td>
 	</tr>
 	
 	<tr>
 	<td>Senha:</td>
-	<td><input type="password" id="senha" name="senha"></td>
+	<td><input type="password" id="senha" name="senha" value="${user.senha}"></td>
 	</tr>
 	
 	<tr>
@@ -34,6 +39,7 @@ Cadastrar Usuario
 
 <c:forEach items="${usuarios}" var="user">
 <tr>
+
 <td style="width:150px"><c:out value="${user.login}"></c:out></td>
 <td style="width:90px"><c:out value="${user.senha}"></c:out></td>
 <td><a href="salvarUsuario?acao=delete&user=${user.login}">Excluir</a></td>
